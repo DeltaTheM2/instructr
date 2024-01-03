@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import FlipClockCountdown from '@leenguyen/react-flip-clock-countdown';
+import '@leenguyen/react-flip-clock-countdown/dist/index.css';
+import rotatingImage from './Assets/blank-clock-face.png';
+import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <section className="container">
+      <div className="rotating-image-container">
+        <img src={rotatingImage} alt="Rotating Clock" />
+      </div>
+      <div className="clock_content">
+        <h1>We are almost there</h1>
+        <h3>Stay tuned for something amazing.</h3>
+        <FlipClockCountdown
+          className='flip-clock'
+          to={new Date().getTime() + 24 * 3600 * 1000 + 5000}
+          labels={["DAYS", "HOURS", "MINUTES", "SECONDS"]}
+          duration={0.5}
+        />
+        <button className="button">Notify Me</button>
+      </div>
+    </section>
   );
 }
 
