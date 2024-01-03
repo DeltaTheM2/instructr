@@ -8,14 +8,12 @@
     background-color: #000;
 }
 @keyframes tick {
-    0%, 100% {
-      transform: rotate(0deg);
+    75% {
+        transform: rotate(32deg)
     }
-    50% {
-      transform: rotate(6deg); /* Overshoot by 6 degrees */
-    }
-    60% {
-      transform: rotate(360deg); /* Settle back into the final position */
+    
+    100% {
+        transform: rotate(30deg);
     }
   }
   
@@ -30,7 +28,8 @@
   }
   
   .rotating-image-container img {
-    transition: transform 0.2s cubic-bezier(.4,2.08,.55,.44);
+    animation: tick 1s steps(1) infinite;
+    animation-timing-function: cubic-bezier(.4,2.08,.55,.44);
     width: 200%; /* Double the percentage to make the image larger */
     position: absolute;
     bottom: 0; /* Aligns the image to show the bottom part */
