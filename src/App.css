@@ -8,11 +8,14 @@
     background-color: #000;
 }
 @keyframes tick {
-    from {
+    0%, 100% {
       transform: rotate(0deg);
     }
-    to {
-      transform: rotate(360deg);
+    50% {
+      transform: rotate(6deg); /* Overshoot by 6 degrees */
+    }
+    60% {
+      transform: rotate(360deg); /* Settle back into the final position */
     }
   }
   
@@ -20,20 +23,19 @@
     position: fixed;
     right: 0;
     top: 0;
-    width: 50px; /* half of your image's width to show a quarter */
-    height: 50px; /* half of your image's height to show a quarter */
-    overflow: hidden; /* hides the parts of the image that are outside this container */
+    width: 400px; /* Set this to half of the new width you want for your image */
+    height: 400px; /* Set this to half of the new height you want for your image */
+    overflow: hidden;
     z-index: 10; /* Ensures the image is above other content */
   }
   
   .rotating-image-container img {
-    animation: tick 12s steps(12, end) infinite; /* 12 steps for 12 hours, each step lasting 1 second */
-    width: 100px; /* original full size of your image */
-    height: auto;
+    transition: transform 0.2s cubic-bezier(.4,2.08,.55,.44);
+    width: 200%; /* Double the percentage to make the image larger */
     position: absolute;
-    right: 0;
-    top: 0;
-    clip-path: polygon(50% 0, 100% 0, 100% 50%, 50% 50%); /* clipping the top right quarter */
+    bottom: 0; /* Aligns the image to show the bottom part */
+    left: 0%; /* Shifts the image to the left to display the bottom left quarter */
+   
   }
   
 
