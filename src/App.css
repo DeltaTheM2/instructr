@@ -108,7 +108,7 @@
     background-color: var(--primary-color);
     color: var(--white-color);
     transform: translateY(-7px);
-    box-shadow: 0 15px 20px rgba(46, 229, 157, 0.4);
+    box-shadow: 0 15px 20px rgba(46, 104, 229, 0.4);
 }
 
 @media (min-width: 900px) {
