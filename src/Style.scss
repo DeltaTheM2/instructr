@@ -4,7 +4,37 @@ html, body {
   padding: 0;
 }
 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    
+  }
+}
 .text-container {
+  animation: fadeInUp 3s ease-out forwards;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  position: absolute;
+  top: 100;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  font-size: 96px;
+  color: white;
+  opacity: 0.8;
+  user-select: none;
+  text-shadow: 1px 1px rgba(0,0,0,0.1);
+}
+.sub-text {
+  opacity: 0%;
+  animation: fadeInUp 2s ease-out forwards 3.5s;
+  transform: translateY(60px);
   z-index: 100;
   width: 100vw;
   height: 100vh;
@@ -14,9 +44,8 @@ html, body {
   left: 0;
   justify-content: center;
   align-items: center;
-  font-size: 96px;
+  font-size: 36px;
   color: white;
-  opacity: 0.8;
   user-select: none;
   text-shadow: 1px 1px rgba(0,0,0,0.1);
 }

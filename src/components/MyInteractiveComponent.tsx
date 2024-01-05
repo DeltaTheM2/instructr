@@ -1,6 +1,6 @@
 import React from 'react';
-import useMouseMovement from '../hooks/useMouseMovement';
-import '../style.scss';
+import '../Style.scss';
+import useMouseMovement from '../hooks/useMouseMovement.ts'
 
 const MyInteractiveComponent = () => {
     useMouseMovement();
@@ -9,6 +9,9 @@ const MyInteractiveComponent = () => {
         <body>
             <div className="text-container">
                 Instructr
+            </div>
+            <div className='sub-text'>
+                Changing Education
             </div>
             <div className="gradient-bg">
                 <svg xmlns="http://www.w3.org/2000/svg">
