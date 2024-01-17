@@ -11,7 +11,7 @@ const MyInteractiveComponent = () => {
                 Instructr
             </div>
             <div className='sub-text'>
-                Changing Education
+                Moving Education towards the future
             </div>
             <div className="gradient-bg">
                 <svg xmlns="http://www.w3.org/2000/svg">
