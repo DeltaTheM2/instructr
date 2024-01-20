@@ -49,7 +49,33 @@ html, body {
   user-select: none;
   text-shadow: 1px 1px rgba(0,0,0,0.1);
 }
+.text-container , .sub-text {
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
 
+.hidden {
+  opacity: 0; // Faded out
+  transform: translateY(10px); // Moves down slightly
+}
+
+.new-component {
+  opacity: 0; // Initially hidden
+  transition: opacity 0.5s ease-in-out;
+}
+
+.show {
+  opacity: 1; // Faded in
+}
+
+// Hiding the scrollbar
+body {
+  overflow-y: scroll; // Keeps the layout stable
+  scrollbar-width: none; // For Firefox
+
+  &::-webkit-scrollbar {
+    display: none; // For Webkit browsers
+  }
+}
 :root {
   --color-bg1: rgb(82, 0, 122);
   --color-bg2: rgb(0, 17, 82);
@@ -101,9 +127,9 @@ html, body {
 
 
 .gradient-bg {
-  width: 100vw;
-  height: 100vh;
-  position: relative;
+  width: 100%;
+  height: 100%;
+  position: absolute;
   overflow: hidden;
   background: linear-gradient(40deg, var(--color-bg1), var(--color-bg2));
   top: 0;
