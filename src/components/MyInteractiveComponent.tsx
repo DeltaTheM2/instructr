@@ -1,20 +1,45 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import '../Style.scss';
 import { gsap } from 'gsap';
-import ScrollTrigger from 'gsap-trial/ScrollTrigger';
-import useMouseMovement from '../hooks/useMouseMovement.ts'
+import ScrollTrigger from 'gsap/ScrollTrigger';
+
 
 const MyInteractiveComponent = () => {
-    useMouseMovement();
+    useEffect(() => {
+        if(typeof window === 'undefined')
+        {
+            return;
+        }
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.to('header', {
+            scale: 0.8,
+            ease: 'power1.in',
+            scrollTrigger: {
+                trigger: 'header',
+                scrub: true,
+                start: 'center top',
+                end: 'bottom top'
+            }
+        });
+        gsap.set('header', {'--opacity': 1});
+        gsap.to('header', {
+            '--opacity': 0,
+            ease: 'power1.in',
+            scrollTrigger: {
+                trigger: 'header',
+                scrub: true,
+                start: 'center bottom',
+                end: 'bottom bottom'
+            }
+        });
+        return () => {
+            ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+        };
+    }, []);
 
     return (
-        <body>
-            <div className="text-container">
-                Instructr
-            </div>
-            <div className='sub-text'>
-                Moving Education towards the future
-            </div>
+        <html>
+        <header>
             <div className="gradient-bg">
                 <svg xmlns="http://www.w3.org/2000/svg">
                 <defs>
@@ -34,7 +59,20 @@ const MyInteractiveComponent = () => {
                 <div className="interactive"></div>
             </div>
             </div>
-    </body>
+            <span className="text-container">
+                Instructr
+            </span>
+            <span className='sub-text'>
+                Moving Education towards the future
+            </span>
+            
+    </header>
+    <main>
+        <section>
+            something
+        </section>
+    </main>
+    </html>
     );
 };
 
