@@ -1,4 +1,6 @@
 import React from 'react';
+import gsap from 'https://cdn.skypack.dev/gsap@3.12.0';
+import ScrollTrigger from 'https://cdn.skypack.dev/gsap@3.12.0/ScrollTrigger';
 import '../Style.scss';
 import useMouseMovement from '../hooks/useMouseMovement.ts'
 
