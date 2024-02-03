@@ -107,7 +107,7 @@
 }
 @layer socials {
   .x-link,
-  .bear-link {
+  .spoti-link {
     color: hsl(0 0% 100%);
     position: fixed;
     bottom: 1rem;
@@ -120,15 +120,15 @@
     mix-blend-mode: difference;
   }
 
-  .bear-link {
+  .spoti-link {
     bottom: unset;
     top: 1rem;
   }
 
-  :where(.x-link, .bear-link):is(:hover, :focus-visible) {
+  :where(.x-link, .spoti-link):is(:hover, :focus-visible) {
     opacity: 1;
   }
-  .bear-link svg {
+  .spoti-link svg {
     width: 75%;
   }
   .x-link svg {
@@ -198,15 +198,15 @@
   opacity: 1; // Faded in
 }
 
-// Hiding the scrollbar
-body {
-  overflow-y: scroll; // Keeps the layout stable
-  scrollbar-width: none; // For Firefox
+// // Hiding the scrollbar
+// body {
+//   overflow-y: scroll; // Keeps the layout stable
+//   scrollbar-width: none; // For Firefox
 
-  &::-webkit-scrollbar {
-    display: none; // For Webkit browsers
-  }
-}
+//   &::-webkit-scrollbar {
+//     display: none; // For Webkit browsers
+//   }
+// }
 :root {
   --color-bg1: rgb(82, 0, 122);
   --color-bg2: rgb(0, 17, 82);
