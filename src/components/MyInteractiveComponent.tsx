@@ -73,7 +73,7 @@ const MyInteractiveComponent = () => {
         </section>
     </main>
     <footer>
-        Spot &copy; 2024
+        Spoti &copy; 2024
     </footer>
     <a className='spoti-link'
     href='https://spotidevelopment.com'
